@@ -1,22 +1,20 @@
 const lightStyles = document.querySelectorAll('link[rel=stylesheet][media*=prefers-color-scheme][media*=light]'); // подключение цветовой схемы (media, которая содержит prefer color scheme и содержит light)
 const darkStyles = document.querySelectorAll('link[rel=stylesheet][media*=prefers-color-scheme][media*=dark]');
 const darkSchemeMedia = matchMedia('(prefers-color-scheme: dark)'); // проверка на темную тему
-const switcherRadios = document.querySelectorAll('.switcher__radio'); // получение всех переключателей
+const switcherCheckbox = document.querySelector('.switch'); // получение чекбокса
 
 function setupSwitcher() {
   const savedScheme = getSavedScheme(); // есть ли сохраненная схема
 
-  // если есть, т.е. не равна null, то находим радио со значением из LocalStorage
+  // если есть, т.е. не равна null, то устанавливаем состояние чекбокса
   if (savedScheme !== null) {
-    const currentRadio = document.querySelector(`.switcher__radio[value=${savedScheme}]`);
-    currentRadio.checked = true;
+    switcherCheckbox.checked = savedScheme === 'dark'; // если сохраненная схема 'dark', то устанавливаем чекбокс в состояние "включено"
   }
 
-  // бежим по радиокнопкам 
-  [...switcherRadios].forEach((radio) => {
-    radio.addEventListener('change', (event) => {
-      setScheme(event.target.value); // получаем каждый элемент (радио) и передаем в setScheme()
-    });
+  // добавляем слушателя на изменение состояния чекбокса
+  switcherCheckbox.addEventListener('change', (event) => {
+    const scheme = event.target.checked ? 'dark' : 'light'; // определяем выбранную тему в зависимости от состояния чекбокса
+    setScheme(scheme); // передаем выбранную тему в функцию setScheme()
   });
 }
 
