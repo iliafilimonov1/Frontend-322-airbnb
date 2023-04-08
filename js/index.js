@@ -51,9 +51,9 @@ const swiper = new Swiper(".mySwiper", {
 });
 
 
-/* tabs main page */
+/* tabs */
 document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelector('.modal-tabs');
+  const tabs = document.querySelector('.tabs');
   const tabsBtn = document.querySelectorAll('.tabs__btn');
   const tabsContent = document.querySelectorAll('.tabs__content');
 

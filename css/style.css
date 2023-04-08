@@ -401,35 +401,6 @@ main {
 }
 
 
-/* features */
-.features {
-  display: none;
-}
-
-.features-content__left {
-  max-width: 449px;
-}
-
-.features-content__right {
-  border-radius: 12px;
-  margin-left: 185px;
-  width: 50%;
-}
-
-.features-content__right img {
-  vertical-align: middle;
-  border-radius: 12px;
-  max-width: 100%;
-  min-height: 285px;
-}
-
-.features-content__left,
-.features-content__right {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-
 /* footer */
 
 .footer {

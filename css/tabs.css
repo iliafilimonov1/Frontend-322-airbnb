@@ -1,43 +1,42 @@
-/* tabs main page */
-.tabs__content {
-  display: none;
-  color: var(--title-color);
-  padding: 0 20px;
+.tabs__list {
+  display: inline-block;
+  background: #EBEBEB;
+  border-radius: 50px;
+  padding: 4px;
+  margin-bottom: 36px;
 }
 
-.tabs-nav {
-  margin-bottom: 24px;
+.tabs__content {
+  display: none;
+}
+
+.tabs__content--title {
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 32px;
+  color: var(--title-color);
 }
 
 .tabs__content--active {
   display: block;
-
 }
 
 .tabs__btn {
-  font-family: "Poppins-SemiBolt", sans-serif;
-  font-weight: 500;
-  padding: 12px 20px;
-  color: var(--title-color);
-  background: transparent;
-  font-weight: 500;
-  font-size: 17px;
-  cursor: pointer;
+  background-color: transparent;
   border: 2px solid transparent;
-  border-bottom-color: #c6c6c6;
-  margin-right: -3px;
-  min-width: 100px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #222222;
+  min-width: 151px;
+  padding: 6.5px 40px;
+  border-radius: 500px;
+  cursor: pointer;
+  outline: none;
+
 }
 
 .tabs__btn--active {
-  border-bottom: 2px solid #FF385C;
-}
-
-.tabs__btn:focus {
-  border: 2px solid #FF385C;
-}
-
-.tabs__btn:disabled {
-  cursor: not-allowed;
-  color: rgba(22, 22, 22, 0.25);
+  background: #FFFFFF;
+  box-shadow: 0px 6px 17px rgba(0, 0, 0, 0.08);
+  border: 2px solid #222222;
 }
