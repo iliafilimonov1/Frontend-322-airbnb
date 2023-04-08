@@ -1,0 +1,91 @@
+input[type='text'],
+input[type='email'],
+textarea {
+  background: var(--input-bg-color);
+  padding: 14px 16px;
+  width: 384px;
+  box-sizing: border-box;
+  border: 1px solid var(--input-border-color);
+  border-radius: 8px;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+
+/* button */
+
+.dark {
+  font-family: "Poppins-SemiBolt", sans-serif;
+  font-weight: 600;
+  margin-top: 24px;
+  padding: 14px 80px;
+  color: var(--button-text-color);
+  border-radius: 8px;
+  background: var(--button-bg-color);
+  white-space: nowrap;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+/* switcher */
+.switcher {
+  position: absolute;
+  top: 50%;
+  right: 94px;
+  margin-top: -10px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  border: 0;
+  width: 24px;
+}
+
+.switcher__radio {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  transition: filter 0.1s ease-in;
+}
+
+.switcher__radio:focus {
+  outline: none;
+}
+
+.switcher__status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  box-shadow: 0 0 0 1px #c3c3c3;
+  border-radius: 18px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url('../icons/status.svg');
+  background-size: 16px;
+  background-position: center;
+  transition: background-position 0.1s ease-in;
+}
+
+.switcher__radio:focus-visible~.switcher__status {
+  box-shadow: 0 0 0 2px black;
+}
+
+.switcher__radio--light:checked~.switcher__status {
+  background-position: left 2px center;
+}
+
+.switcher__radio--dark:checked~.switcher__status {
+  background-position: right 2px center;
+}

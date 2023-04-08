@@ -1,0 +1,43 @@
+/* tabs main page */
+.tabs__content {
+  display: none;
+  color: var(--title-color);
+  padding: 0 20px;
+}
+
+.tabs-nav {
+  margin-bottom: 24px;
+}
+
+.tabs__content--active {
+  display: block;
+
+}
+
+.tabs__btn {
+  font-family: "Poppins-SemiBolt", sans-serif;
+  font-weight: 500;
+  padding: 12px 20px;
+  color: var(--title-color);
+  background: transparent;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-bottom-color: #c6c6c6;
+  margin-right: -3px;
+  min-width: 100px;
+}
+
+.tabs__btn--active {
+  border-bottom: 2px solid #FF385C;
+}
+
+.tabs__btn:focus {
+  border: 2px solid #FF385C;
+}
+
+.tabs__btn:disabled {
+  cursor: not-allowed;
+  color: rgba(22, 22, 22, 0.25);
+}
