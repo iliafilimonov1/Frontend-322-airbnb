@@ -9,7 +9,8 @@ body {
   font-family: "Poppins", Tahoma, Arial, sans-serif;
   color: #18191F;
   position: relative;
-  min-height: 100vh; /* 100% от просматриваемой области */
+  min-height: 100vh;
+  /* 100% от просматриваемой области */
   background-color: var(--body-color);
 }
 
@@ -133,7 +134,77 @@ a {
   vertical-align: middle;
 }
 
-/* END header */
+/* выпадающее меню */
+.dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.dropdown__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 73px;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 4px 7px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 29px;
+}
+
+.icon {
+  margin-left: 4px;
+}
+
+.icon svg line {
+  stroke: var(--nav-link-color);
+}
+
+.icon svg,
+.avatar svg {
+  vertical-align: middle;
+}
+
+.dropdown__menu {
+  position: absolute;
+  left: 0;
+  top: 48px;
+  list-style-type: none;
+  padding: 8px 0;
+  margin: 0;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.17);
+  border-radius: 16px;
+  z-index: 1;
+  min-width: 243px;
+  overflow: hidden; /* при наведении у item есть скругления */
+}
+
+.dropdown__menu-item {
+  padding: 17px 24px;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #222222;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.menu-item__line {
+  background: #dddddd;
+  margin: 8px 0;
+  height: 1px;
+}
+
+.dropdown__menu-item:hover {
+  background-color: #F7F7F7;
+}
+
+/* main */
 
 main {
   padding-top: 68px;
