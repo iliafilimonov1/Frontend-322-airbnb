@@ -4,82 +4,82 @@ const darkSchemeMedia = matchMedia('(prefers-color-scheme: dark)'); // пров�
 const switcherRadios = document.querySelectorAll('.switcher__radio'); // получение всех переключателей
 
 function setupSwitcher() {
-	const savedScheme = getSavedScheme(); // есть ли сохраненная схема
+  const savedScheme = getSavedScheme(); // есть ли сохраненная схема
 
-	// если есть, т.е. не равна null, то находим радио со значением из LocalStorage
-	if (savedScheme !== null) {
-		const currentRadio = document.querySelector(`.switcher__radio[value=${savedScheme}]`);
-		currentRadio.checked = true;
-	}
+  // если есть, т.е. не равна null, то находим радио со значением из LocalStorage
+  if (savedScheme !== null) {
+    const currentRadio = document.querySelector(`.switcher__radio[value=${savedScheme}]`);
+    currentRadio.checked = true;
+  }
 
-	// бежим по радиокнопкам 
-	[...switcherRadios].forEach((radio) => {
-		radio.addEventListener('change', (event) => {
-			setScheme(event.target.value); // получаем каждый элемент (радио) и передаем в setScheme()
-		});
-	});
+  // бежим по радиокнопкам 
+  [...switcherRadios].forEach((radio) => {
+    radio.addEventListener('change', (event) => {
+      setScheme(event.target.value); // получаем каждый элемент (радио) и передаем в setScheme()
+    });
+  });
 }
 
 function setupScheme() {
-	const savedScheme = getSavedScheme(); // берет из LocalStorage тему, если была выставлена
-	const systemScheme = getSystemScheme(); // проверяет, на наличие системной темы
+  const savedScheme = getSavedScheme(); // берет из LocalStorage тему, если была выставлена
+  const systemScheme = getSystemScheme(); // проверяет, на наличие системной темы
 
-	if (savedScheme === null) return; // есть ли сохраненная схема?
+  if (savedScheme === null) return; // есть ли сохраненная схема?
 
-	// если есть, сравниваем, сохраненную с системной. если они не равны, выигрывает сохраненная
-	if (savedScheme !== systemScheme) {
-		setScheme(savedScheme);
-	}
+  // если есть, сравниваем, сохраненную с системной. если они не равны, выигрывает сохраненная
+  if (savedScheme !== systemScheme) {
+    setScheme(savedScheme);
+  }
 }
 
 function setScheme(scheme) {
-	switchMedia(scheme); // переключает медиа стили
+  switchMedia(scheme); // переключает медиа стили
 
-	if (scheme === 'auto') {
-		clearScheme(); // если тема выставлена, как auto, очищаем localStorage
-	} else {
-		saveScheme(scheme);
-	}
+  if (scheme === 'auto') {
+    clearScheme(); // если тема выставлена, как auto, очищаем localStorage
+  } else {
+    saveScheme(scheme);
+  }
 }
 
 // функция переключает медиа на нужное, в зависимости от того, что мы в нее передаем
 function switchMedia(scheme) {
-	let lightMedia;
-	let darkMedia;
+  let lightMedia;
+  let darkMedia;
 
-	if (scheme === 'auto') {
-		lightMedia = '(prefers-color-scheme: light)'; // ставим то, что по умолчанию (светлая)
-		darkMedia = '(prefers-color-scheme: dark)'; // ставим то, что по умолчанию (темная)
-	} else {
-		lightMedia = (scheme === 'light') ? 'all' : 'not all';
-		darkMedia = (scheme === 'dark') ? 'all' : 'not all';
-	}
+  if (scheme === 'auto') {
+    lightMedia = '(prefers-color-scheme: light)'; // ставим то, что по умолчанию (светлая)
+    darkMedia = '(prefers-color-scheme: dark)'; // ставим то, что по умолчанию (темная)
+  } else {
+    lightMedia = (scheme === 'light') ? 'all' : 'not all';
+    darkMedia = (scheme === 'dark') ? 'all' : 'not all';
+  }
 
-	[...lightStyles].forEach((link) => {
-		link.media = lightMedia;
-	});
+  [...lightStyles].forEach((link) => {
+    link.media = lightMedia;
+  });
 
-	[...darkStyles].forEach((link) => {
-		link.media = darkMedia;
-	});
+  [...darkStyles].forEach((link) => {
+    link.media = darkMedia;
+  });
 }
 
 function getSystemScheme() {
-	const darkScheme = darkSchemeMedia.matches;
+  const darkScheme = darkSchemeMedia.matches;
 
-	return darkScheme ? 'dark' : 'light';
+  return darkScheme ? 'dark' : 'light';
 }
 
 function getSavedScheme() {
-	return localStorage.getItem('color-scheme');
+  return localStorage.getItem('color-scheme');
 }
 
 function saveScheme(scheme) {
-	localStorage.setItem('color-scheme', scheme);
+  localStorage.setItem('color-scheme', scheme);
 }
 
 function clearScheme() {
-	localStorage.removeItem('color-scheme');
+  localStorage.removeItem('color-scheme');
 }
 
 setupSwitcher();

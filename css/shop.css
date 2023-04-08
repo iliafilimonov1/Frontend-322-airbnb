@@ -85,7 +85,7 @@
 }
 
 .heart-active {
-  fill: #FF385C;
+  fill: var(--accent-color);
 }
 
 .shop-card__content {
@@ -125,7 +125,7 @@
 }
 
 .price-current {
-  color: #FF385C;
+  color: var(--accent-color);
 }
 
 .card-link {
@@ -172,7 +172,7 @@
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-size: calc(var(--swiper-navigation-size) / 2);
+  font-size: calc(var(--swiper-navigation-size) / 3);
 }
 
 .swiper-scrollbar-drag {

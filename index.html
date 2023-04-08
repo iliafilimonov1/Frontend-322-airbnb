@@ -2,10 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Airbnb</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" media="(prefers-color-scheme: light)">
   <meta name="theme-color" media="(prefers-color-scheme: dark)">
@@ -23,7 +22,8 @@
 
   <link rel="stylesheet" href="css/light.css" media="(prefers-color-scheme: light)">
   <link rel="stylesheet" href="css/dark.css" media="(prefers-color-scheme: dark)">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Main page</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
         <img src="images/header/logo.svg" alt="logo">
       </a>
       <nav class="header-nav">
-        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link active" href="/">Home</a>
         <a class="nav-link ml-36px" href="/shop.html">Shop</a>
         <a class="nav-link ml-36px" href="#">Blogs</a>
         <a class="nav-link ml-36px" href="#">About</a>
@@ -47,29 +47,6 @@
         </svg>
       </button>
 
-      <button class="login">
-        <div class="icon">
-          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="6.55671e-08" y1="1.25" x2="14" y2="1.25" stroke="#222222" stroke-width="1.5" />
-            <line x1="6.55671e-08" y1="5.25" x2="14" y2="5.25" stroke="#222222" stroke-width="1.5" />
-            <line x1="6.55671e-08" y1="9.25" x2="14" y2="9.25" stroke="#222222" stroke-width="1.5" />
-          </svg>
-        </div>
-        <div class="avatar">
-          <svg width="28" height="28" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="17" cy="17" r="15" fill="#717171" />
-            <mask id="mask0_351_652" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="26"
-              height="26">
-              <circle cx="17" cy="17" r="12.1875" fill="#737373" />
-            </mask>
-            <g mask="url(#mask0_351_652)">
-              <circle cx="17" cy="15.125" r="6.5625" fill="white" />
-              <circle cx="17" cy="31.0625" r="11.25" fill="white" />
-            </g>
-          </svg>
-        </div>
-      </button>
-
       <fieldset class="switcher">
         <input class="switcher__radio switcher__radio--light" type="radio" name="color-scheme" value="light"
           aria-label="Светлая" checked>
@@ -80,33 +57,33 @@
     </div>
   </header>
 
-  <main>
-    <!-- Модалка -->
-    <dialog class="modal" id="modal">
-      <button class="button close-button">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
-          focusable="false"
-          style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;">
-          <path d="m6 6 20 20"></path>
-          <path d="m26 6-20 20"></path>
-        </svg>
-      </button>
-      <div class="tabs">
-        <nav class="tabs__list">
-          <button class="tabs__btn tabs__btn--active" data-tabs-path="language">Language</button>
-          <button class="tabs__btn" data-tabs-path="currency">Currency</button>
-        </nav>
+  <!-- Модалка -->
+  <dialog class="modal" id="modal">
+    <button class="button close-button">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+        focusable="false"
+        style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;">
+        <path d="m6 6 20 20"></path>
+        <path d="m26 6-20 20"></path>
+      </svg>
+    </button>
+    <div class="tabs">
+      <nav class="tabs__list">
+        <button class="tabs__btn tabs__btn--active" data-tabs-path="language">Language</button>
+        <button class="tabs__btn" data-tabs-path="currency">Currency</button>
+      </nav>
 
-        <div class="tabs__content tabs__content--active" data-tabs-target="language">
-          <h3 class="tabs__content--title">Choose a language and region</h3>
-        </div>
-
-        <div class="tabs__content" data-tabs-target="currency">
-          <h3 class="tabs__content--title">Choose a currency</h3>
-        </div>
+      <div class="tabs__content tabs__content--active" data-tabs-target="language">
+        <h3 class="tabs__content--title">Choose a language and region</h3>
       </div>
-    </dialog>
 
+      <div class="tabs__content" data-tabs-target="currency">
+        <h3 class="tabs__content--title">Choose a currency</h3>
+      </div>
+    </div>
+  </dialog>
+
+  <main>
     <section class="slider">
       <div class="container">
         <h2 class="title">Slider</h2>
@@ -148,7 +125,7 @@
                 <span class="price-prev">Rs. 2999</span>
                 <span class="price-current">Rs. 2999</span>
 
-                <button class="dark">Add to cart</button>
+                <button class="btn btn-primary">Add to cart</button>
               </div>
             </div>
             <!-- swiper-slide  -->
@@ -187,7 +164,7 @@
                 <span class="price-prev">Rs. 2999</span>
                 <span class="price-current">Rs. 2999</span>
 
-                <button class="dark">Add to cart</button>
+                <button class="btn btn-primary">Add to cart</button>
               </div>
             </div>
             <!-- swiper-slide  -->
@@ -226,7 +203,7 @@
                 <span class="price-prev">Rs. 2999</span>
                 <span class="price-current">Rs. 2999</span>
 
-                <button class="dark">Add to cart</button>
+                <button class="btn btn-primary">Add to cart</button>
               </div>
             </div>
             <!-- swiper-slide  -->
@@ -265,7 +242,7 @@
                 <span class="price-prev">Rs. 2999</span>
                 <span class="price-current">Rs. 2999</span>
 
-                <button class="dark">Add to cart</button>
+                <button class="btn btn-primary">Add to cart</button>
               </div>
             </div>
             <!-- swiper-slide  -->
@@ -304,7 +281,7 @@
                 <span class="price-prev">Rs. 2999</span>
                 <span class="price-current">Rs. 2999</span>
 
-                <button class="dark">Add to cart</button>
+                <button class="btn btn-primary">Add to cart</button>
               </div>
             </div>
             <!-- swiper-slide  -->
@@ -343,7 +320,7 @@
                 <span class="price-prev">Rs. 2999</span>
                 <span class="price-current">Rs. 2999</span>
 
-                <button class="dark">Add to cart</button>
+                <button class="btn btn-primary">Add to cart</button>
               </div>
             </div>
             <!-- swiper-slide  -->
@@ -382,7 +359,7 @@
                 <span class="price-prev">Rs. 2999</span>
                 <span class="price-current">Rs. 2999</span>
 
-                <button class="dark">Add to cart</button>
+                <button class="btn btn-primary">Add to cart</button>
               </div>
             </div>
             <!-- swiper-slide  -->
@@ -421,7 +398,7 @@
                 <span class="price-prev">Rs. 2999</span>
                 <span class="price-current">Rs. 2999</span>
 
-                <button class="dark">Add to cart</button>
+                <button class="btn btn-primary">Add to cart</button>
               </div>
             </div>
             <!-- swiper-slide  -->
@@ -460,7 +437,7 @@
                 <span class="price-prev">Rs. 2999</span>
                 <span class="price-current">Rs. 2999</span>
 
-                <button class="dark">Add to cart</button>
+                <button class="btn btn-primary">Add to cart</button>
               </div>
             </div>
             <!-- swiper-slide  -->
@@ -499,7 +476,7 @@
                 <span class="price-prev">Rs. 2999</span>
                 <span class="price-current">Rs. 2999</span>
 
-                <button class="dark">Add to cart</button>
+                <button class="btn btn-primary">Add to cart</button>
               </div>
             </div>
             <!-- swiper-slide  -->
@@ -538,7 +515,7 @@
                 <span class="price-prev">Rs. 2999</span>
                 <span class="price-current">Rs. 2999</span>
 
-                <button class="dark">Add to cart</button>
+                <button class="btn btn-primary">Add to cart</button>
               </div>
             </div>
             <!-- swiper-slide  -->
@@ -577,7 +554,7 @@
                 <span class="price-prev">Rs. 2999</span>
                 <span class="price-current">Rs. 2999</span>
 
-                <button class="dark">Add to cart</button>
+                <button class="btn btn-primary">Add to cart</button>
               </div>
             </div>
             <!-- swiper-slide  -->
@@ -587,39 +564,6 @@
 
           <div class="swiper-scrollbar"></div>
         </div>
-      </div>
-    </section>
-
-    <section class="sign-up">
-      <div class="container">
-        <button class="login">
-          <div class="icon">
-            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="6.55671e-08" y1="1.25" x2="14" y2="1.25" stroke="#222222" stroke-width="1.5" />
-              <line x1="6.55671e-08" y1="5.25" x2="14" y2="5.25" stroke="#222222" stroke-width="1.5" />
-              <line x1="6.55671e-08" y1="9.25" x2="14" y2="9.25" stroke="#222222" stroke-width="1.5" />
-            </svg>
-          </div>
-          <div class="avatar">
-            <svg width="28" height="28" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="17" cy="17" r="15" fill="#717171" />
-              <mask id="mask0_351_652" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="26"
-                height="26">
-                <circle cx="17" cy="17" r="12.1875" fill="#737373" />
-              </mask>
-              <g mask="url(#mask0_351_652)">
-                <circle cx="17" cy="15.125" r="6.5625" fill="white" />
-                <circle cx="17" cy="31.0625" r="11.25" fill="white" />
-              </g>
-            </svg>
-          </div>
-        </button>
-
-        <ul>
-          <li>asdasd</li>
-          <li>asdasd</li>
-          <li>asdasd</li>
-        </ul>
       </div>
     </section>
   </main>
@@ -636,10 +580,9 @@
     </div>
   </footer>
 
-
   <script src="lib/swiper.js"></script>
   <script src="js/theme-switcher.js"></script>
-  <script src="js/index.js"></script>
+  <script src="js/index.js" defer></script>
 </body>
 
 </html>
