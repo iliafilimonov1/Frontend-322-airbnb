@@ -75,5 +75,31 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
+/* dropdown menu */
+const dropdownButton = document.querySelector('.dropdown__button');
+const dropdownMenu = document.querySelector('.dropdown__menu');
+
+// клик по кнопке
+dropdownButton.addEventListener('click', () => {
+  dropdownMenu.style.display = dropdownMenu.style.display === 'none' ? 'block' : 'none';
+})
+
+// закрытие выпадашки по клику на пункт меню
+dropdownMenu.addEventListener('click', (event) => {
+  if(event.target.classList.contains('dropdown__menu-item')) {
+    dropdownMenu.style.display = 'none';
+  }
+})
+
+// закрываем меню при клике вне меню
+document.addEventListener('click', (event) => {
+  if(!event.target.closest('.dropdown')) {
+    dropdownMenu.style.display = 'none';
+  }
+})
 
 
+// скрываем меню при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+  dropdownMenu.style.display = 'none';
+})
