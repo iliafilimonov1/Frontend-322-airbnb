@@ -1,9 +1,11 @@
 @import "../css/fonts.css";
 @import "../css/normalize.css";
 @import "../lib/swiper.css";
-@import "./shop.css";
 @import "../css/forms.css";
 @import "../css/tabs.css";
+@import "./shop.css";
+@import "./help.css";
+
 
 body {
   font-family: "Poppins", Tahoma, Arial, sans-serif;
@@ -46,17 +48,9 @@ a {
   z-index: 2;
 }
 
-.header-logo {
-  display: inline-block;
-  vertical-align: middle;
+.header-icons {
+  width: 200px;
 }
-
-.header-nav {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 376px;
-}
-
 
 .nav-link {
   font-weight: 400;
@@ -105,8 +99,6 @@ a {
   box-sizing: border-box;
   border: 0;
   cursor: pointer;
-  vertical-align: middle;
-  margin-left: 200px;
 }
 
 .language svg circle,
@@ -169,7 +161,7 @@ a {
 
 .dropdown__menu {
   position: absolute;
-  left: 0;
+  right: 0;
   top: 48px;
   list-style-type: none;
   padding: 8px 0;
@@ -179,7 +171,8 @@ a {
   border-radius: 16px;
   z-index: 1;
   min-width: 243px;
-  overflow: hidden; /* при наведении у item есть скругления */
+  overflow: hidden;
+  /* при наведении у item есть скругления */
 }
 
 .dropdown__menu-item {
@@ -207,7 +200,7 @@ a {
 /* main */
 
 main {
-  padding-top: 68px;
+  padding-top: 74px;
   padding-bottom: 68px;
 }
 
@@ -328,13 +321,6 @@ main {
 
 
 /* main card */
-.main-card {
-  width: 240px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-bottom: 40px;
-}
-
 .main-card:hover {
   cursor: pointer;
 }
@@ -656,14 +642,6 @@ main {
   font-size: 16px;
   line-height: 24px;
   color: var(--title-color);
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.footer-nav {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 445px;
 }
 
 
@@ -683,4 +661,10 @@ main {
 
 .ml-36px {
   margin-left: 36px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

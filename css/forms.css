@@ -32,24 +32,21 @@ textarea {
 
 /* switcher */
 .switcher {
-  position: absolute;
-  top: 50%;
-  right: 94px;
-  margin-top: -10px;
   padding: 2px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   border: 0;
   width: 24px;
+  margin: 0;
 }
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   input[type='checkbox'] {
-    --active: #BB86FC; 
+    --active: #BB86FC;
     --active-inner: #fff;
     --focus: 0.5px #f6f8ff;
     --border: #bbc1e1;
-    --border-hover: #BB86FC; 
+    --border-hover: #BB86FC;
     --background: #fff;
     --disabled: #f6f8ff;
     --disabled-inner: #e1e6f9;
@@ -113,7 +110,6 @@ textarea {
     display: inline-block;
     vertical-align: top;
     cursor: pointer;
-    margin-left: 4px;
   }
 
   input[type='checkbox'].switch {
