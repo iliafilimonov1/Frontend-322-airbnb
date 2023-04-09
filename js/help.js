@@ -1,31 +1,26 @@
-/* dropdown menu */
+/* dropdown */
 const dropdownButton = document.querySelector('.dropdown__button');
 const dropdownMenu = document.querySelector('.dropdown__menu');
 
-// клик по кнопке
+// открытие/закрытие списка
 dropdownButton.addEventListener('click', () => {
-  dropdownMenu.style.display = dropdownMenu.style.display === 'none' ? 'block' : 'none';
-})
+  dropdownMenu.classList.toggle("dropdown-show"); // adds/removes the class dropdown-show
+});
 
-// закрытие выпадашки по клику на пункт меню
-dropdownMenu.addEventListener('click', (event) => {
-  if (event.target.classList.contains('dropdown__menu-item')) {
-    dropdownMenu.style.display = 'none';
-  }
-})
-
-// закрываем меню при клике вне меню
+// клик вне пунктов меню
 document.addEventListener('click', (event) => {
-  if (!event.target.closest('.dropdown')) {
-    dropdownMenu.style.display = 'none';
+  if (!event.target.closest('.dropdown__menu') && !event.target.closest('.dropdown__button')) {
+    dropdownMenu.classList.remove('dropdown-show');
   }
-})
+});
 
-
-// скрываем меню при загрузке страницы
-document.addEventListener('DOMContentLoaded', () => {
-  dropdownMenu.style.display = 'none';
-})
+// закрытие меню по клику на пункт
+const dropdownMenuItems = document.querySelectorAll('.dropdown__menu-item');
+dropdownMenuItems.forEach(item => {
+  item.addEventListener('click', () => {
+    dropdownMenu.classList.remove('dropdown-show');
+  });
+});
 
 
 /* tabs */

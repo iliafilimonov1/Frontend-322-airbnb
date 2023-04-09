@@ -160,6 +160,7 @@ a {
 }
 
 .dropdown__menu {
+  display: none;
   position: absolute;
   right: 0;
   top: 48px;
@@ -175,7 +176,13 @@ a {
   /* при наведении у item есть скругления */
 }
 
+.dropdown-show {
+  display: inline-block;
+}
+
 .dropdown__menu-item {
+  display: flex;
+  align-items: center;
   padding: 17px 24px;
   box-sizing: border-box;
   font-style: normal;
