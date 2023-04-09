@@ -1,5 +1,6 @@
 .tabs__list {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   background: #EBEBEB;
   border-radius: 50px;
   padding: 4px;
