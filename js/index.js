@@ -1,6 +1,7 @@
+/* модалка currency/language */
 const modal = document.querySelector('#modal'); // получение доступа к модалке
 const openModal = document.querySelector('.language'); // доступ к кнопке language
-const closeModal = document.querySelector('.close-button'); // доступ к кнопке Close Modal внутри модалки
+const closeModal = document.querySelector('#close-icon'); // доступ к кнопке Close Modal внутри модалки
 
 openModal.addEventListener("click", () => {
   modal.showModal();
@@ -9,6 +10,21 @@ openModal.addEventListener("click", () => {
 
 closeModal.addEventListener("click", () => {
   modal.close();
+});
+
+
+/* модалка login */
+const modalLogin = document.querySelector('#modal-login'); // получение доступа к модалке
+const openModalLogin = document.querySelector('#log-in'); // доступ к кнопке language
+const closeModaLogin = document.querySelector('#close-button'); // доступ к кнопке Close Modal внутри модалки
+
+openModalLogin.addEventListener("click", () => {
+  modalLogin.showModal();
+});
+
+
+closeModaLogin.addEventListener("click", () => {
+  modalLogin.close();
 });
 
 
@@ -98,3 +114,17 @@ dropdownMenuItems.forEach(item => {
     dropdownMenu.classList.remove('dropdown-show');
   });
 });
+
+
+/* btn-airbnb */
+const button = document.querySelector('.btn-airbnb');
+
+button.addEventListener('mousemove', e => {
+  const rect = button.getBoundingClientRect();
+
+  const x = (e.clientX - rect.left) * 100 / button.clientWidth;
+  const y = (e.clientY - rect.top) * 100 / button.clientHeight;
+
+  button.style.setProperty('--mouse-x', x);
+  button.style.setProperty('--mouse-y', y);
+})
