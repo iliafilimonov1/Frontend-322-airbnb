@@ -1,0 +1,114 @@
+/* modal */
+.modal {
+  min-width: 450px;
+  min-height: 550px;
+  border: 0;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: var(--body-color);
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal .close-button {
+  background-color: transparent;
+  padding: 8px;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  left: 16px;
+}
+
+.modal .close-button::before {
+  bottom: 0;
+  content: '';
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  border-radius: 22px;
+  left: 0;
+  right: 0;
+}
+
+.modal .close-button:hover::before {
+  background-color: var(--bg-hover);
+}
+
+.modal .close-button svg path {
+  stroke: var(--title-color);
+}
+
+
+/* модалка для входа в систему */
+.login-header {
+  position: relative;
+  min-height: 64px;
+  border-bottom: 1px solid #ebebeb;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-header__title {
+  font-size: 16px;
+}
+
+.login-body {
+  padding: 24px;
+}
+
+.login-body__avatar {
+  text-align: center;
+}
+
+.login-body__avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.login-footer {
+  padding: 24px 24px 38px 24px;
+}
+
+.login-footer__flex {
+  display: flex;
+  align-items: center;
+}
+
+.login-footer__flex span {
+  font-size: 13px;
+  margin-right: 8px;
+}
+
+
+
+
+
+/* заголовки в модалке с табами */
+.modal-title {
+  margin-top: 16px;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 32px;
+  color: var(--title-color);
+}
+
+.modal-subtitle {
+  margin-top: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--text-color);
+  max-width: 384px;
+  color: var(--subtitle-color);
+}

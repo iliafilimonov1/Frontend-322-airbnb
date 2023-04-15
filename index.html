@@ -80,7 +80,7 @@
               <a href="#" class="dropdown__menu-item">
                 <li>Sign up</li>
               </a>
-              <a href="#" class="dropdown__menu-item">
+              <a id="log-in" href="#" class="dropdown__menu-item">
                 <li>Log in</li>
               </a>
               <div class="menu-item__line"></div>
@@ -104,9 +104,48 @@
     </div>
   </header>
 
-  <!-- Модалка -->
+  <!-- Модалка входа в систему -->
+  <dialog class="modal" id="modal-login">
+    <header class="login-header">
+      <button id="close-button" class="button close-button">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+          focusable="false"
+          style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;">
+          <path d="m6 6 20 20"></path>
+          <path d="m26 6-20 20"></path>
+        </svg>
+      </button>
+      <h2 class="login-header__title">Welcome back, User</h2>
+    </header>
+
+    <section class="login-body">
+      <div class="login-body__avatar">
+        <img src="images/avatar.webp" alt="avatar">
+      </div>
+      <form class="flex-column" action="#">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Your email">
+
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Your password">
+
+        <button class="btn btn-airbnb" type="button">Log in</button>
+      </form>
+    </section>
+
+    <footer class="login-footer">
+      <button type="button" class="btn btn-link mb-24px">Forgot password?</button>
+
+      <div class="login-footer__flex">
+        <span> Not you?</span>
+        <button type="button" class="btn btn-link">Use another account</button>
+      </div>
+    </footer>
+  </dialog>
+
+  <!-- Модалка language/currency -->
   <dialog class="modal" id="modal">
-    <button class="button close-button">
+    <button id="close-icon" class="button close-button">
       <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
         focusable="false"
         style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;">

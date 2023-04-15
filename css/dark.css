@@ -7,6 +7,8 @@
   --nav-link-color: #ffffff; /* цвет ссылок в навигации */
 
   --accent-color: #BB86FC; /* основной цвет тем */
+
+  --bg-hover: rgba(255, 255, 255, 0.12);
   
 }
 
@@ -21,6 +23,7 @@
 /* forms */
 input[type='text'],
 input[type='email'],
+input[type='password'],
 textarea {
   --input-bg-color: #F6F6F6;
   --input-border-color: #D2D2D2;
