@@ -1,3 +1,13 @@
+const allSkeletons = document.querySelectorAll('.skeleton');
+
+window.addEventListener('load', () => {
+  allSkeletons.forEach(item => {
+    item.classList.remove('skeleton');
+  })
+})
+
+
+
 /* dropdown */
 const dropdownButton = document.querySelector('.dropdown__button');
 const dropdownMenu = document.querySelector('.dropdown__menu');
