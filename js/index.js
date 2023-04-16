@@ -1,3 +1,7 @@
+import { ModalLogin } from "./modal-login.js";
+
+const modalLogin = new ModalLogin();
+
 /* модалка currency/language */
 const modal = document.querySelector('#modal'); // получение доступа к модалке
 const openModal = document.querySelector('.language'); // доступ к кнопке language
@@ -12,20 +16,6 @@ closeModal.addEventListener("click", () => {
   modal.close();
 });
 
-
-/* модалка login */
-const modalLogin = document.querySelector('#modal-login'); // получение доступа к модалке
-const openModalLogin = document.querySelector('#log-in'); // доступ к кнопке language
-const closeModaLogin = document.querySelector('#close-button'); // доступ к кнопке Close Modal внутри модалки
-
-openModalLogin.addEventListener("click", () => {
-  modalLogin.showModal();
-});
-
-
-closeModaLogin.addEventListener("click", () => {
-  modalLogin.close();
-});
 
 
 /* handler for hearts active */
@@ -60,10 +50,7 @@ const swiper = new Swiper('.swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
-  },
-  // autoplay: {
-  //   delay: 2000,
-  // }
+  }
 });
 
 
