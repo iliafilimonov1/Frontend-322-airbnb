@@ -10,6 +10,8 @@
 }
 
 .card {
+  display: inline-flex;
+  flex-direction: column;
   max-width: 400px;
   border-radius: 6px;
   margin-bottom: 12px;
@@ -50,10 +52,10 @@
   z-index: 1;
   background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
   background-size: 100%;
-  animation: skeleton 1s infinite reverse;
+  /* animation: skeleton 1s infinite reverse; */
 }
 
-@keyframes skeleton {
+/* @keyframes skeleton {
   0% {
     background-position: -100% 0;
   }
@@ -61,4 +63,4 @@
   100% {
     background-position: 100% 0;
   }
-}
+} */
