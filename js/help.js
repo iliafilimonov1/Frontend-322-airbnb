@@ -8,7 +8,6 @@ window.addEventListener('load', () => {
 
 /* btn-airbnb */
 const button = document.querySelector('.btn-airbnb');
-console.log(button)
 
 button.addEventListener('mousemove', e => {
   const rect = button.getBoundingClientRect();

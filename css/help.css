@@ -92,6 +92,15 @@
 }
 
 
+
+
+/* help-details */
+.help-details {
+  padding: 74px 0 68px 0;
+  min-height: 100vh;
+}
+
+
 /* атомарные классы */
 .mb-8 {
   margin-bottom: 8px;

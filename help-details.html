@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Details</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)">
+
+  <script>
+    // https://doka.guide/js/match-media/
+    if (matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+      document.documentElement.style.display = 'none';
+      document.head.insertAdjacentHTML(
+        'beforeend',
+        '<link rel="stylesheet" href="styles/light.css" onload="document.documentElement.style.display=\'\'">'
+      );
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/light.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="css/dark.css" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+
+      <div class="flex">
+        <a class="header-logo" href="#">
+          <img src="images/header/logo.svg" alt="logo">
+        </a>
+
+        <div class="header-icons flex">
+          <button class="language">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8" stroke="#222222" stroke-width="1.5" />
+              <ellipse cx="9" cy="9" rx="3" ry="8" stroke="#222222" stroke-width="1.5" />
+              <line x1="1" y1="9.25" x2="17" y2="9.25" stroke="#222222" stroke-width="1.5" />
+            </svg>
+          </button>
+
+          <div class="dropdown">
+            <button class="dropdown__button">
+              <div class="icon">
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="6.55671e-08" y1="1.25" x2="14" y2="1.25" stroke="#222222" stroke-width="1.5" />
+                  <line x1="6.55671e-08" y1="5.25" x2="14" y2="5.25" stroke="#222222" stroke-width="1.5" />
+                  <line x1="6.55671e-08" y1="9.25" x2="14" y2="9.25" stroke="#222222" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div class="avatar">
+                <svg width="28" height="28" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="17" cy="17" r="15" fill="#717171" />
+                  <mask id="mask0_351_652" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="26"
+                    height="26">
+                    <circle cx="17" cy="17" r="12.1875" fill="#737373" />
+                  </mask>
+                  <g mask="url(#mask0_351_652)">
+                    <circle cx="17" cy="15.125" r="6.5625" fill="white" />
+                    <circle cx="17" cy="31.0625" r="11.25" fill="white" />
+                  </g>
+                </svg>
+              </div>
+            </button>
+            <ul class="dropdown__menu">
+              <a href="#" class="dropdown__menu-item">
+                <li>Sign up</li>
+              </a>
+              <a href="#" class="dropdown__menu-item">
+                <li>Log in</li>
+              </a>
+              <div class="menu-item__line"></div>
+              <a href="#" class="dropdown__menu-item">
+                <li>Airbnb your home</li>
+              </a>
+              <a href="help.html" class="dropdown__menu-item">
+                <li>Help</li>
+              </a>
+            </ul>
+          </div>
+
+          <fieldset class="switcher">
+            <input type="checkbox" class="switch">
+            <label for="s2"></label>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="help-details">
+    <div class="container">
+      <h2>Начало работы с Airbnb.</h2>
+
+      <!-- injected data  -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="flex">
+        <a class="footer-rights" href="#">Copyright © 2022 Corporate UI Design System by Creative Tim.</a>
+        <nav class="footer-nav">
+          <a class="nav-link" href="#">Creative Tim</a>
+          <a class="nav-link ml-36px" href="#">About Us</a>
+          <a class="nav-link ml-36px" href="#">Blog</a>
+          <a class="nav-link ml-36px" href="#">License</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="lib/swiper.js"></script>
+  <script src="js/theme-switcher.js"></script>
+  <script src="js/shop.js"></script>
+
+</body>
+
+</html>
