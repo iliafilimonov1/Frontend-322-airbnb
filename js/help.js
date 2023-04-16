@@ -6,6 +6,20 @@ window.addEventListener('load', () => {
   })
 })
 
+/* btn-airbnb */
+const button = document.querySelector('.btn-airbnb');
+console.log(button)
+
+button.addEventListener('mousemove', e => {
+  const rect = button.getBoundingClientRect();
+
+  const x = (e.clientX - rect.left) * 100 / button.clientWidth;
+  const y = (e.clientY - rect.top) * 100 / button.clientHeight;
+
+  button.style.setProperty('--mouse-x', x);
+  button.style.setProperty('--mouse-y', y);
+})
+
 
 
 /* dropdown */
