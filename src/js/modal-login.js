@@ -35,7 +35,7 @@ export class ModalLogin {
 
 				<section class="login-body">
 					<div class="login-body__avatar">
-						<img src="images/avatar.webp" alt="avatar">
+						<img src="../images/avatar.webp" alt="avatar">
 					</div>
 					<form class="flex-column" action="#">
 						<label for="email">Email</label>
