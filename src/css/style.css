@@ -9,7 +9,7 @@
 
 
 body {
-  font-family: "Poppins", Tahoma, Arial, sans-serif;
+  font-family: "Messina Sans", sans-serif;
   color: #18191F;
   position: relative;
   min-height: 100vh;
@@ -338,16 +338,14 @@ main {
 }
 
 .main-card .card-title {
-  font-family: "Poppins-Semibolt", sans-serif;
-  font-weight: 600px;
+  font-weight: 600;
   margin-top: 16px;
   text-transform: none;
   color: #2D2D2D;
 }
 
 .main-card .card-subtitle {
-  font-family: "Poppins-Regular", Tahoma, Verdana, sans-serif;
-  font-weight: 400px;
+  font-weight: 400;
   margin-top: 4px;
   text-transform: capitalize;
   color: #737373;
@@ -356,24 +354,21 @@ main {
 .main-card .price-prev {
   text-decoration: line-through;
   color: #737373;
-  font-family: "Poppins-SemiBold", sans-serif;
-  font-weight: 600px;
+  font-weight: 600;
   margin-top: 16px;
   margin-right: 8px;
   display: inline-block;
 }
 
 .main-card .price-current {
-  font-family: "Poppins-SemiBold", sans-serif;
-  font-weight: 600px;
+  font-weight: 600;
   margin-top: 16px;
   color: var(--accent-color);
   display: inline-block;
 }
 
 .main-card .card-button {
-  font-family: "Poppins-SemiBolt", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 24px;
   padding: 8px 80px;
   color: #FFFFFF;
@@ -482,16 +477,14 @@ main {
 }
 
 .main-card .card-title {
-  font-family: "Poppins-Semibolt", sans-serif;
-  font-weight: 600px;
+  font-weight: 600;
   margin-top: 16px;
   text-transform: none;
   color: var(--title-color);
 }
 
 .main-card .card-subtitle {
-  font-family: "Poppins-Regular", Tahoma, Verdana, sans-serif;
-  font-weight: 400px;
+  font-weight: 400;
   margin-top: 4px;
   text-transform: capitalize;
   color: var(--subtitle-color);
@@ -500,15 +493,13 @@ main {
 .main-card .price-prev {
   text-decoration: line-through;
   color: var(--subtitle-color);
-  font-family: "Poppins-SemiBold", sans-serif;
-  font-weight: 600px;
+  font-weight: 600;
   margin-top: 16px;
   margin-right: 8px;
   display: inline-block;
 }
 
 .main-card .price-current {
-  font-family: "Poppins-SemiBold", sans-serif;
   font-weight: 600;
   margin-top: 16px;
   color: var(--accent-color);
@@ -566,7 +557,6 @@ main {
 }
 
 .help-card__title {
-  font-family: "Poppins-Semibolt", sans-serif;
   font-weight: 600;
   font-size: 18px;
   margin-top: 24px;

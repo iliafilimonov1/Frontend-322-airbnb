@@ -1,40 +1,35 @@
 @font-face {
-  font-family: 'Poppins';
-  src: local('Poppins-Regular'), local('Poppins-Regular'),
-    url('../fonts/Poppins/Poppins-Regular.woff') format('woff'),
-    url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype'),
-    url('../fonts/Poppins/Poppins-Regular.eot?#iefix') format('embedded-opentype');
+  font-family: 'Messina Sans';
+  src: url('../fonts/MessinaSans/MessinaSans-Light.eot');
+  src: local('Messina Sans Light'), local('Messina Sans Light'),
+    url('../fonts/MessinaSans/MessinaSans-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/MessinaSans/MessinaSans-Light.woff2') format('woff2'),
+    url('../fonts/MessinaSans/MessinaSans-Light.woff') format('woff'),
+    url('../fonts/MessinaSans/MessinaSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Messina Sans';
+  src: url('../fonts/MessinaSans/MessinaSans-Regular.eot');
+  src: local('Messina Sans Regular'), local('MessinaSans-Regular'),
+    url('../fonts/MessinaSans/MessinaSans-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/MessinaSans/MessinaSans-Regular.woff2') format('woff2'),
+    url('../fonts/MessinaSans/MessinaSans-Regular.woff') format('woff'),
+    url('../fonts/MessinaSans/MessinaSans-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: local('Poppins SemiBold'), local('Poppins-SemiBold'),
-    url('../fonts/Poppins/Poppins-SemiBold.woff') format('woff'),
-    url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype'),
-    url('../fonts/Poppins/Poppins-SemiBold.eot?#iefix') format('embedded-opentype');
+  font-family: 'Messina Sans';
+  src: url('../fonts/MessinaSans/MessinaSans-SemiBold.eot');
+  src: local('Messina Sans SemiBold'), local('MessinaSans-SemiBold'),
+    url('../fonts/MessinaSans/MessinaSans-SemiBold.eot') format('embedded-opentype'),
+    url('../fonts/MessinaSans/MessinaSans-SemiBold.woff2') format('woff2'),
+    url('../fonts/MessinaSans/MessinaSans-SemiBold.woff') format('woff'),
+    url('../fonts/MessinaSans/MessinaSans-SemiBold.ttf') format('truetype');
   font-weight: 600;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'Poppins';
-  src: local('Poppins Bold'), local('Poppins-Bold'),
-    url('../fonts/Poppins/Poppins-Bold.woff') format('woff'),
-    url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype'),
-    url('../fonts/Poppins/Poppins-Bold.eot') format('embedded-opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: local('Poppins-ExtraBold'), local('Poppins-ExtraBold'),
-    url('../fonts/Poppins/Poppins-ExtraBold.woff') format('woff'),
-    url('../fonts/Poppins/Poppins-ExtraBold.ttf') format('truetype'),
-    url('../fonts/Poppins/Poppins-ExtraBold.eot?#iefix') format('embedded-opentype');
-  font-weight: 800;
   font-style: normal;
 }
