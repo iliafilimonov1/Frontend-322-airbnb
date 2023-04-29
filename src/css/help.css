@@ -43,6 +43,22 @@
   background-color: #ebebeb;
 }
 
+.popup {
+  display: none;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  position: absolute;
+  width: 100%;
+  top: 55px;
+  left: 0;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+}
+
+.popup-show {
+  display: block;
+}
+
 
 /* обертка для логинки */
 .login-wrapper {
