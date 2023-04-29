@@ -30,8 +30,21 @@ p {
   margin: 0;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 a {
   text-decoration: none;
+  color: var(--nav-link-color);
+}
+
+svg {
+  vertical-align: middle;
+  position: relative;
+  z-index: 0; /* возможно, придется поднять из-за плашки при наведении */
 }
 
 /* header */
@@ -53,42 +66,64 @@ a {
   width: 200px;
 }
 
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 320px;
+}
+
 .nav-link {
+  color: var(--nav-link-color);
+  font-family: 'Messina Sans', sans-serif;
   font-weight: 400;
   font-size: 16px;
+  padding: 10px 0;
   line-height: 24px;
-  color: var(--nav-link-color);
+  border: 0;
+  margin: 0;
+  background-color: transparent;
   position: relative;
 }
 
-.nav-link::after {
-  display: none;
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: var(--nav-link-color);
+/* полоска снизу для навигации */
+.nav-link::after,
+.active::after {
+  content: '';
+  height: 2px;
   position: absolute;
-  left: 0;
-  bottom: -8px;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--nav-link-color);
+  inset-inline: 0;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
 }
 
-.nav-link:hover.nav-link::after {
-  display: inline-block;
+/* анимация линии при наведении на неактивную ссылку */
+.nav-link:hover::after {
+  transform: scaleX(1);
+  opacity: 0.65;
+}
+
+.nav-link:hover {
+  opacity: 0.65;
+}
+
+/* анимация линии при наведении на активную ссылку */
+.active::after {
+  background-color: var(--accent-color);
+  transform: scaleX(1);
 }
 
 .active {
   color: var(--accent-color);
 }
 
-.active::after {
-  display: inline-block;
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: var(--accent-color);
-  position: absolute;
-  left: 0;
-  bottom: -8px;
+/* непрозрачность при наведении на текст/линию активной ссылки */
+.active:hover,
+.active:hover::after {
+  opacity: 1;
 }
 
 .language {
@@ -109,22 +144,21 @@ a {
 }
 
 .language::before {
-  bottom: 0;
-  content: '';
+  content: "";
   position: absolute;
-  top: 0;
-  z-index: -1;
-  border-radius: 22px;
-  left: -3px;
-  right: -3px;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .language:hover::before {
-  background-color: #F7F7F7;
-}
-
-.language svg {
-  vertical-align: middle;
+  background-color: #f7f7f7;
 }
 
 /* выпадающее меню */
@@ -135,74 +169,74 @@ a {
 
 .dropdown__button {
   display: inline-flex;
-  align-items: center;
+  min-width: 76px;
   justify-content: space-between;
-  min-width: 73px;
-  outline: none;
-  cursor: pointer;
-  background-color: transparent;
-  padding: 4px 7px;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
+  align-items: center;
+  padding: 4px 7px 4px 12px;
+  background-color: var(--body-color);
+  border: 1px solid #EBEBEB;
   border-radius: 29px;
+  cursor: pointer;
 }
 
-.icon {
-  margin-left: 4px;
+.dropdown__button:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
 }
 
-.icon svg line {
+.avatar {
+  width: 30px;
+  height: 30px;
+}
+
+.dropdown__button img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.dropdown__button svg,
+.dropdown__button img {
+  max-width: 100%;
+}
+
+.icon line {
   stroke: var(--nav-link-color);
-}
-
-.icon svg,
-.avatar svg {
-  vertical-align: middle;
 }
 
 .dropdown__menu {
   display: none;
-  position: absolute;
-  right: 0;
-  top: 48px;
-  list-style-type: none;
+  background-color: var(--body-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
   padding: 8px 0;
-  margin: 0;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.17);
-  border-radius: 16px;
-  z-index: 1;
-  min-width: 243px;
-  overflow: hidden;
-  /* при наведении у item есть скругления */
+  position: absolute;
+  top: 50%;
+  margin-top: 34px;
+  right: 0;
+  padding: 8px 0;
+  min-width: 240px;
 }
 
 .dropdown-show {
-  display: inline-block;
+  display: block;
 }
 
 .dropdown__menu-item {
-  display: flex;
-  align-items: center;
-  padding: 13px 24px;
-  box-sizing: border-box;
-  font-style: normal;
+  padding: 12px 16px;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  color: #222222;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.menu-item__line {
-  background: #dddddd;
-  margin: 8px 0;
-  height: 1px;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown__menu-item:hover {
-  background-color: #F7F7F7;
+  background-color: var(--bg-hover);
+}
+
+.menu-item__line {
+  background-color: #dddddd;
+  margin: 8px 0;
+  height: 0.5px;
 }
 
 /* main */

@@ -25,14 +25,17 @@
 }
 
 .modal .close-button::before {
-  bottom: 0;
-  content: '';
+  content: "";
   position: absolute;
-  top: 0;
-  z-index: -1;
-  border-radius: 22px;
-  left: 0;
-  right: 0;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal .close-button:hover::before {

@@ -6,91 +6,60 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Airbnb</title>
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)">
-
-  <script>
-    // https://doka.guide/js/match-media/
-    if (matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
-      document.documentElement.style.display = 'none';
-      document.head.insertAdjacentHTML(
-        'beforeend',
-        '<link rel="stylesheet" href="styles/light.css" onload="document.documentElement.style.display=\'\'">'
-      );
-    }
-  </script>
-
   <link rel="stylesheet" href="css/light.css" media="(prefers-color-scheme: light)">
   <link rel="stylesheet" href="css/dark.css" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <header class="header">
+  <header class="header-help">
     <div class="container">
-
       <div class="flex">
-        <a class="header-logo" href="index.html">
-          <img src="images/header/logo.svg" alt="logo">
+        <a class="help-logo" href="index.html">
+          <img src="images/header/logo-dark.svg" alt="logo-dark">
+          <span>Help Center</span>
         </a>
 
-        <div class="header-icons flex">
+        <div class="header-buttons flex">
           <button class="language">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="9" cy="9" r="8" stroke="#222222" stroke-width="1.5" />
               <ellipse cx="9" cy="9" rx="3" ry="8" stroke="#222222" stroke-width="1.5" />
               <line x1="1" y1="9.25" x2="17" y2="9.25" stroke="#222222" stroke-width="1.5" />
             </svg>
           </button>
 
-          <div class="dropdown">
-            <button class="dropdown__button">
-              <div class="icon">
-                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="6.55671e-08" y1="1.25" x2="14" y2="1.25" stroke="#222222" stroke-width="1.5" />
-                  <line x1="6.55671e-08" y1="5.25" x2="14" y2="5.25" stroke="#222222" stroke-width="1.5" />
-                  <line x1="6.55671e-08" y1="9.25" x2="14" y2="9.25" stroke="#222222" stroke-width="1.5" />
-                </svg>
-              </div>
-              <div class="avatar">
-                <svg width="28" height="28" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="17" cy="17" r="15" fill="#717171" />
-                  <mask id="mask0_351_652" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="26"
-                    height="26">
-                    <circle cx="17" cy="17" r="12.1875" fill="#737373" />
-                  </mask>
-                  <g mask="url(#mask0_351_652)">
-                    <circle cx="17" cy="15.125" r="6.5625" fill="white" />
-                    <circle cx="17" cy="31.0625" r="11.25" fill="white" />
-                  </g>
-                </svg>
-              </div>
-            </button>
-            <ul class="dropdown__menu">
-              <a href="#" class="dropdown__menu-item">
-                <li>Sign up</li>
-              </a>
-              <a href="#" class="dropdown__menu-item">
-                <li>Log in</li>
-              </a>
-              <div class="menu-item__line"></div>
-              <a href="#" class="dropdown__menu-item">
-                <li>Airbnb your home</li>
-              </a>
-              <a href="help.html" class="dropdown__menu-item">
-                <li>Help</li>
-              </a>
-            </ul>
-          </div>
-
-          <fieldset class="switcher">
-            <input type="checkbox" class="switch">
-            <label for="s2"></label>
-          </fieldset>
+          <button class="dropdown__button">
+            <svg class="icon" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="6.55671e-08" y1="1.25" x2="14" y2="1.25" stroke="#222222" stroke-width="1.5" />
+              <line x1="6.55671e-08" y1="5.25" x2="14" y2="5.25" stroke="#222222" stroke-width="1.5" />
+              <line x1="6.55671e-08" y1="9.25" x2="14" y2="9.25" stroke="#222222" stroke-width="1.5" />
+            </svg>
+            <div class="avatar">
+              <img src="images/1.webp" alt="images">
+            </div>
+          </button>
+          <ul class="dropdown__menu">
+            <a id="log-in" href="#" class="dropdown__menu-item">
+              <li>Log in</li>
+            </a>
+            <a href="#" class="dropdown__menu-item">
+              <li>Sign up</li>
+            </a>
+            <div class="menu-item__line"></div>
+            <a href="#" class="dropdown__menu-item">
+              <li>Airbnb your home</li>
+            </a>
+            <a href="help.html" class="dropdown__menu-item">
+              <li>Help</li>
+            </a>
+            <a href="help-details.html" class="dropdown__menu-item">
+              <li>Help Details</li>
+            </a>
+          </ul>
         </div>
-      </div>
 
+      </div>
     </div>
   </header>
 
@@ -105,16 +74,16 @@
             <button class="tabs__btn" data-tabs-path="admin">Travel admin</button>
           </nav>
 
+          <div class="login-wrapper flex">
+            <div>
+              <h2 class="login-wrapper__title mb-8">We’re here for you</h2>
+              <p class="login-wrapper__subtitle">Log in to get help with your reservations, account, and more.</p>
+            </div>
+            <button class="btn btn-airbnb">Log in or sign up</button>
+          </div>
+
           <!-- контент первого таба -->
           <div class="tabs__content tabs__content--active" data-tabs-target="guest">
-            <div class="tabs__content--login flex">
-              <div>
-                <h2 class="tabs_content_title mb-8">We’re here for you</h2>
-                <p class="tabs_content_subtitle">Log in to get help with your reservations, account, and more.</p>
-              </div>
-              <button class="btn btn-airbnb">Log in or sign up</button>
-            </div>
-
             <section class="guides">
               <div class="flex mb-32">
                 <h2 class="tabs_content_title ">Guides for getting started</h2>
@@ -201,15 +170,7 @@
 
           <!-- контент второго таба -->
           <div class="tabs__content" data-tabs-target="host">
-            <div class="tabs__content--login ">
-              <div class="flex">
-                <div>
-                  <h2 class="tabs_content_title mb-8">We’re here for you</h2>
-                  <p class="tabs_content_subtitle">Log in to get help with your reservations, account, and more.</p>
-                </div>
-                <button class="btn btn-airbnb">Log in or sign up</button>
-              </div>
-            </div>
+            
             <div class="flex mb-32">
               <h2 class="tabs_content_title ">Guides for getting started</h2>
               <a class="browse-topics" href="#">Browse all topics
@@ -262,15 +223,7 @@
 
           <!-- контент третьего таба -->
           <div class="tabs__content" data-tabs-target="experience">
-            <div class="tabs__content--login ">
-              <div class="flex">
-                <div>
-                  <h2 class="tabs_content_title mb-8">We’re here for you</h2>
-                  <p class="tabs_content_subtitle">Log in to get help with your reservations, account, and more.</p>
-                </div>
-                <button class="btn btn-airbnb">Log in or sign up</button>
-              </div>
-            </div>
+            
             <div class="flex mb-32">
               <h2 class="tabs_content_title ">Guides for getting started</h2>
               <a class="browse-topics" href="#">Browse all topics
@@ -322,15 +275,6 @@
 
           <!-- контент четвертого таба -->
           <div class="tabs__content" data-tabs-target="admin">
-            <div class="tabs__content--login ">
-              <div class="flex">
-                <div>
-                  <h2 class="tabs_content_title mb-8">We’re here for you</h2>
-                  <p class="tabs_content_subtitle">Log in to get help with your reservations, account, and more.</p>
-                </div>
-                <button class="btn btn-airbnb">Log in or sign up</button>
-              </div>
-            </div>
             <div class="flex mb-32">
               <h2 class="tabs_content_title ">Guides for getting started</h2>
               <a class="browse-topics" href="#">Browse all topics
@@ -383,53 +327,6 @@
         </div>
       </div>
     </section>
-
-    <section class="example">
-      <div class="container">
-        <div class="flex-card">
-          <div class="card">
-            <div class="card-image skeleton">
-              <img src="images/card-image-2.jpg" alt="card">
-            </div>
-            <h3 class="card-title skeleton">Lorem, ipsum dolor.</h3>
-            <p class="card-subtitle skeleton">Lorem ipsum dolor sit amet </p>
-
-            <button class="btn btn-primary skeleton">Some text</button>
-          </div>
-
-          <div class="card">
-            <div class="card-image skeleton">
-              <img src="images/card-image-2.jpg" alt="card">
-            </div>
-            <h3 class="card-title skeleton">Lorem, ipsum dolor.</h3>
-            <p class="card-subtitle skeleton">Lorem ipsum dolor sit amet </p>
-
-            <button class="btn btn-primary skeleton">Some text</button>
-          </div>
-
-          <div class="card">
-            <div class="card-image skeleton">
-              <img src="images/card-image-2.jpg" alt="card">
-            </div>
-            <h3 class="card-title skeleton">Lorem, ipsum dolor.</h3>
-            <p class="card-subtitle skeleton">Lorem ipsum dolor sit amet </p>
-
-            <button class="btn btn-primary skeleton">Some text</button>
-          </div>
-
-          <div class="card">
-            <div class="card-image skeleton">
-              <img src="images/card-image-2.jpg" alt="card">
-            </div>
-            <h3 class="card-title skeleton">Lorem, ipsum dolor.</h3>
-            <p class="card-subtitle skeleton">Lorem ipsum dolor sit amet </p>
-
-            <button class="btn btn-primary skeleton">Some text</button>
-          </div>
-
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
@@ -446,10 +343,7 @@
     </div>
   </footer>
 
-
-  <script src="js/theme-switcher.js"></script>
   <script src="js/help.js"></script>
-
 </body>
 
 </html>
