@@ -68,3 +68,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector(`[data-tabs-target="${path}"]`).classList.add('tabs__content--active');
   }
 })
+
+
+/* popup */
+const searchTarget = document.querySelector('.help-search');
+const searchDropdown = document.querySelector('#search-dropdown');
+
+/* открытие/закрытие списка */
+searchTarget.addEventListener('click', () => {
+  searchDropdown.classList.toggle('popup-show');
+})
+
+// закрытие меню по клику на пункт
+const popupItems = document.querySelectorAll('.dropdown__menu-item')
+popupItems.forEach(item => {
+  item.addEventListener('click', () => {
+    searchDropdown.classList.remove('dropdown-show');
+  })
+})
