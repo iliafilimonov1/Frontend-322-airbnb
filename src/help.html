@@ -127,7 +127,7 @@
 
   <main>
     <section class="help">
-      <div class="container-help">
+      <div class="container">
         <div class="tabs">
           <nav class="tabs__list">
             <button class="tabs__btn tabs__btn--active" data-tabs-path="guest">Guest</button>
@@ -389,6 +389,76 @@
         </div>
       </div>
     </section>
+
+    <!-- ask a question -->
+    <button class="btn btn-ask">
+      <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"
+        style="height: 16px; width: 16px; display: block; fill: currentcolor;">
+        <path
+          d="m5.49 0c-3.02 0-5.49 2.46-5.49 5.49v9.02c0 3.03 2.46 5.49 5.5 5.49h3.23l2.87 3.8c.2.27.6.27.8 0l2.87-3.8h3.23c3.03 0 5.5-2.46 5.5-5.49v-9.02c0-3.03-2.46-5.49-5.49-5.49zm13.01 19h-3.47c-.16 0-.31.07-.4.2l-2.63 3.47-2.63-3.47c-.09-.13-.24-.2-.4-.2h-3.47c-2.48 0-4.5-2.01-4.5-4.49v-9.02c0-2.47 2.02-4.49 4.49-4.49h13.02c2.48 0 4.49 2.01 4.49 4.49v9.02c0 2.48-2.02 4.49-4.5 4.49z"
+          fill-rule="evenodd"></path>
+      </svg>
+      Ask a question
+    </button>
+
+    <dialog class="modal" id="modal-question">
+      <header class="modal-header">
+        <button id="close-button" class="button close-button">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+            focusable="false"
+            style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;">
+            <path d="m6 6 20 20"></path>
+            <path d="m26 6-20 20"></path>
+          </svg>
+        </button>
+      </header>
+
+      <section class="modal-body">
+        <h2 class="modal-body__title">Questions about this home?</h2>
+        <p class="modal-body__subtitle">We’re excited you’re here. A Villa Specialist from Luxury Retreats, an Airbnb
+          company, will be in touch to finalize the details.</p>
+
+        <form action="#">
+          <div class="flex">
+            <div class="flex-column">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="Your email" required>
+            </div>
+
+            <div class="flex-column">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="Your email">
+            </div>
+          </div>
+
+          <div class="flex">
+            <div class="flex-column">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="Your email">
+            </div>
+
+            <div class="flex-column">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="Your email">
+            </div>
+          </div>
+
+          <div class="flex-column">
+            <label for="text-message">Your message</label>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </div>
+
+          <button class="btn btn-ghost" type="button">Send message</button>
+        </form>
+      </section>
+
+      <footer class="modal-footer">
+        <div class="modal-footer__flex">
+          <span> Learn how we handle your details in our </span>
+          <a href="#" target="_blank" class="btn btn-link">Privacy policy</a>
+        </div>
+      </footer>
+    </dialog>
   </main>
 
   <footer>

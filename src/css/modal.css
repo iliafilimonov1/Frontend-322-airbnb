@@ -1,6 +1,7 @@
 /* modal */
 .modal {
   min-width: 450px;
+  max-width: 960px;
   min-height: 550px;
   border: 0;
   position: relative;
@@ -9,6 +10,22 @@
   border-radius: 6px;
   background-color: var(--body-color);
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-name: slide;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translate(0, 100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .modal::backdrop {
@@ -48,7 +65,7 @@
 
 
 /* модалка для входа в систему */
-.login-header {
+.modal-header {
   position: relative;
   min-height: 64px;
   border-bottom: 1px solid #ebebeb;
@@ -61,35 +78,48 @@
   align-items: center;
 }
 
-.login-header__title {
+.modal-header__title {
   font-size: 16px;
 }
 
-.login-body {
+.modal-body {
   padding: 24px;
 }
 
-.login-body__avatar {
+.modal-body__title {
+  font-size: 22px;
+  margin-bottom: 24px;
+  line-height: 30px;
+}
+
+.modal-body__subtitle {
+  font-size: 15px;
+  margin-bottom: 24px;
+  line-height: 30px;
+}
+
+.modal-body__avatar {
   text-align: center;
 }
 
-.login-body__avatar img {
+.modal-body__avatar img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  object-fit: cover; /* для изображений большего размера */
+  object-fit: cover;
+  /* для изображений большего размера */
 }
 
-.login-footer {
+.modal-footer {
   padding: 24px 24px 38px 24px;
 }
 
-.login-footer__flex {
+.modal-footer__flex {
   display: flex;
   align-items: center;
 }
 
-.login-footer__flex span {
+.modal-footer__flex span {
   font-size: 13px;
   margin-right: 8px;
 }
