@@ -21,7 +21,7 @@ export class ModalLogin {
 		const template = `
 			<!-- Модалка входа в систему -->
 			<dialog class="modal" id="modal-login">
-				<header class="login-header">
+				<header class="modal-header">
 					<button id="close-button" class="button close-button">
 						<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
 							focusable="false"
@@ -30,11 +30,11 @@ export class ModalLogin {
 							<path d="m26 6-20 20"></path>
 						</svg>
 					</button>
-					<h2 class="login-header__title">Welcome back, User</h2>
+					<h2 class="modal-header__title">Welcome back, User</h2>
 				</header>
 
-				<section class="login-body">
-					<div class="login-body__avatar">
+				<section class="modal-body">
+					<div class="modal-body__avatar">
 						<img src="../images/avatar.webp" alt="avatar">
 					</div>
 					<form class="flex-column" action="#">
@@ -48,9 +48,9 @@ export class ModalLogin {
 					</form>
 				</section>
 
-				<footer class="login-footer">
+				<footer class="modal-footer">
 					<button type="button" class="btn btn-link mb-24px">Forgot password?</button>
-					<div class="login-footer__flex">
+					<div class="modal-footer__flex">
 						<span> Not you?</span>
 						<button type="button" class="btn btn-link">Use another account</button>
 					</div>

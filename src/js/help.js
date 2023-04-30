@@ -7,18 +7,19 @@ window.addEventListener('load', () => {
 })
 
 /* btn-airbnb */
-const button = document.querySelector('.btn-airbnb');
+const buttons = document.querySelectorAll('.btn-airbnb');
 
-button.addEventListener('mousemove', e => {
-  const rect = button.getBoundingClientRect();
+buttons.forEach(element => {
+  element.addEventListener('mousemove', e => {
+    const rect = element.getBoundingClientRect();
 
-  const x = (e.clientX - rect.left) * 100 / button.clientWidth;
-  const y = (e.clientY - rect.top) * 100 / button.clientHeight;
+    const x = (e.clientX - rect.left) * 100 / element.clientWidth;
+    const y = (e.clientY - rect.top) * 100 / element.clientHeight;
 
-  button.style.setProperty('--mouse-x', x);
-  button.style.setProperty('--mouse-y', y);
+    element.style.setProperty('--mouse-x', x);
+    element.style.setProperty('--mouse-y', y);
+  })
 })
-
 
 
 /* dropdown */
@@ -102,3 +103,17 @@ const formSearch = document.querySelector('#form');
 
 formSearch.addEventListener("focusin", () => formSearch.classList.add('focused'));
 formSearch.addEventListener("focusout", () => formSearch.classList.remove('focused'));
+
+
+/* модалка ask question */
+const modal = document.querySelector('#modal-question');
+const openModal = document.querySelector('.btn-ask');
+const closeModal = document.querySelector('#close-button');
+
+openModal.addEventListener("click", () => {
+  modal.showModal();
+});
+
+closeModal.addEventListener("click", () => {
+  modal.close();
+});
