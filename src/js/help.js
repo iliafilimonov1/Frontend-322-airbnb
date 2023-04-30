@@ -85,6 +85,7 @@ const popupOptions = document.querySelectorAll('.popup-options');
 
 popupOptions.forEach(option => {
   option.addEventListener('click', () => {
+    event.stopPropagation(); // остановка всплытия событий 
     searchPopup.classList.remove('popup-show');
   })
 })
