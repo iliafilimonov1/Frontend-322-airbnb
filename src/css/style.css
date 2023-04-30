@@ -695,6 +695,10 @@ footer {
   margin-left: 36px;
 }
 
+.p-12 {
+  padding: 12px 24px;
+}
+
 .flex {
   display: flex;
   justify-content: space-between;
@@ -705,4 +709,10 @@ footer {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }

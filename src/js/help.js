@@ -72,17 +72,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* popup */
 const searchTarget = document.querySelector('.help-search');
-const searchDropdown = document.querySelector('#search-dropdown');
+const searchPopup = document.querySelector('#search-popup');
 
 /* открытие/закрытие списка */
 searchTarget.addEventListener('click', () => {
-  searchDropdown.classList.toggle('popup-show');
+  searchPopup.classList.toggle('popup-show');
 })
 
 // закрытие меню по клику на пункт
-const popupItems = document.querySelectorAll('.dropdown__menu-item')
-popupItems.forEach(item => {
-  item.addEventListener('click', () => {
-    searchDropdown.classList.remove('dropdown-show');
+const popupOptions = document.querySelectorAll('.popup-options');
+
+popupOptions.forEach(option => {
+  option.addEventListener('click', () => {
+    searchPopup.classList.remove('popup-show');
   })
 })
+
+
+// клик вне пунктов меню
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('#search-popup') && !event.target.closest('.help-search')) {
+    searchPopup.classList.remove('popup-show');
+  }
+});
+
+
+// обводка при фокусе формы
+const formSearch = document.querySelector('#form');
+
+formSearch.addEventListener("focusin", () => formSearch.classList.add('focused'));
+formSearch.addEventListener("focusout", () => formSearch.classList.remove('focused'));
