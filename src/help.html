@@ -126,6 +126,25 @@
   </header>
 
   <main>
+    <section class="messages">
+      <div class="container">
+        <table class="table" id="messages-table">
+          <thead>
+            <tr>
+              <th width="100px">First name</th>
+              <th width="100px">Last name</th>
+              <th width="100px">Email</th>
+              <th width="100px">Phone</th>
+            </tr>
+          </thead>
+
+          <tbody id="messages-list">
+            <!-- содержимое текстового сообщения пользователя -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="help">
       <div class="container">
         <div class="tabs">
@@ -418,37 +437,45 @@
         <p class="modal-body__subtitle">We’re excited you’re here. A Villa Specialist from Luxury Retreats, an Airbnb
           company, will be in touch to finalize the details.</p>
 
-        <form action="#">
+        <form id="form-modal">
           <div class="flex">
-            <div class="flex-column">
-              <label for="email">Email</label>
-              <input id="email" type="email" placeholder="Your email" required>
+            <div class="flex-column mr-9">
+              <label for="firstName"></label>
+              <input id="firstName" type="text" placeholder="First name*">
             </div>
 
-            <div class="flex-column">
-              <label for="email">Email</label>
-              <input id="email" type="email" placeholder="Your email">
+            <div class="flex-column ">
+              <label for="lastName"></label>
+              <input id="lastName" type="text" placeholder="Last name*">
             </div>
           </div>
 
           <div class="flex">
             <div class="flex-column">
-              <label for="email">Email</label>
-              <input id="email" type="email" placeholder="Your email">
+              <label for="email"></label>
+              <input id="email" type="text" placeholder="Email*">
             </div>
 
-            <div class="flex-column">
-              <label for="email">Email</label>
-              <input id="email" type="email" placeholder="Your email">
+            <div class="flex-column ">
+              <label for="phone"></label>
+              <input id="phone" type="tel" placeholder="Telephone">
             </div>
           </div>
 
           <div class="flex-column">
             <label for="text-message">Your message</label>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea name="text" id="text-modal" cols="30" rows="10"
+              placeholder="For example: Is this home family friendly? What other homes should I consider?">
+            </textarea>
           </div>
 
-          <button class="btn btn-ghost" type="button">Send message</button>
+          <div class="inline-flex">
+            <input type="checkbox" class="modal-checkbox">
+            <label for="text-message">I'd like to receive marketing and policy communications from Luxury
+              Retreats</label>
+          </div>
+
+          <button class="btn btn-ghost" type="submit">Send message</button>
         </form>
       </section>
 
@@ -458,6 +485,7 @@
           <a href="#" target="_blank" class="btn btn-link">Privacy policy</a>
         </div>
       </footer>
+
     </dialog>
   </main>
 

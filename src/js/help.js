@@ -118,3 +118,85 @@ openModal.addEventListener("click", () => {
 closeModal.addEventListener("click", () => {
   modal.close();
 });
+
+
+/* функционал получения/записи пользовательских сообщений */
+// класс пользовательских данных 
+class Message {
+  constructor(firstName, lastName, email, phone) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.phone = phone;
+  }
+}
+
+// класс для отображения наших данных
+class UI {
+  static displayMessages() {
+    const messages = Store.getMessages();
+
+    messages.forEach(message => UI.addMessageTolist(message));
+  }
+
+  static addMessageTolist(message) {
+    const list = document.querySelector('#messages-list');
+
+    const row = document.createElement('tr');
+
+    row.innerHTML = `
+      <td class="w-200">${message.firstName}</td>
+      <td class="w-200">${message.lastName}</td>
+      <td class="w-200">${message.email}</td>
+      <td class="w-200">${message.phone}</td>
+    `;
+
+    list.appendChild(row);
+  }
+}
+
+// класс для хранения/записи/получения данных из localStorage
+class Store {
+  static getMessages() {
+    let messages;
+
+    if (localStorage.getItem('messages') === null) {
+      messages = [];
+    } else {
+      messages = JSON.parse(localStorage.getItem('messages'));
+    }
+
+    return messages;
+  }
+
+  static addMessage(message) {
+    const messages = Store.getMessages();
+    messages.push(message);
+    localStorage.setItem('messages', JSON.stringify(messages));
+  }
+}
+
+
+// обработка получения пользовательских данных
+document.querySelector('#form-modal').addEventListener('submit', event => {
+  event.preventDefault(); // предотвращение отправки данных
+
+  const firstName = document.querySelector('#firstName').value;
+  const lastName = document.querySelector('#lastName').value;
+  const email = document.querySelector('#email').value;
+  const phone = document.querySelector('#phone').value;
+
+  if (firstName === '' || lastName === '' || email === '' || phone === '') {
+    alert('Please fill in all fields!');
+  } else {
+    const message = new Message(firstName, lastName, email, phone); // передаем данные в сущность Message
+
+    UI.addMessageTolist(message); // рисуем данные в таблице
+
+    Store.addMessage(message); // сохраняем данные в стор
+  }
+})
+
+
+// показ данных из localStorage при загрузке страницы 
+document.addEventListener('DOMContentLoaded', UI.displayMessages);
