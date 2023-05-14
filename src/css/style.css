@@ -715,6 +715,35 @@ footer {
 }
 
 
+
+
+
+/* snackbar */
+.snackbar {
+  color: #f1f1f1;
+  min-height: 45px;
+  min-width: 173px;
+  box-sizing: border-box;
+  visibility: hidden;
+  will-change: transform;
+  background: #222222;
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-size: 87%;
+  transition: visibility .3s, transform .3s;
+  display: inline-block;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  transform: translateY(100px);
+  box-shadow: 0 2px 5px #00000042;
+}
+
+.snackbar--visible {
+  visibility: visible;
+  transform: none;
+}
+
 /* атомарные классы */
 .w-200 {
   width: 200px;

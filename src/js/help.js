@@ -1,3 +1,5 @@
+import snackbar from "snackbar";
+
 const allSkeletons = document.querySelectorAll('.skeleton');
 
 window.addEventListener('load', () => {
@@ -131,6 +133,7 @@ class Message {
   }
 }
 
+
 // класс для отображения наших данных
 class UI {
   static displayMessages() {
@@ -149,11 +152,19 @@ class UI {
       <td class="w-200">${message.lastName}</td>
       <td class="w-200">${message.email}</td>
       <td class="w-200">${message.phone}</td>
+      <td><a href="#" class="icon-delete">x</a></td>
     `;
 
     list.appendChild(row);
   }
+
+  static deleteMessage(element) {
+    if (element.classList.contains('icon-delete')) {
+      element.parentElement.parentElement.remove();
+    }
+  }
 }
+
 
 // класс для хранения/записи/получения данных из localStorage
 class Store {
@@ -173,18 +184,32 @@ class Store {
     const messages = Store.getMessages();
     messages.push(message);
     localStorage.setItem('messages', JSON.stringify(messages));
+
+    snackbar.show('Запись добавлена!'); // показ уведомления
+  }
+
+  static removeMessage(phone) {
+    const messages = Store.getMessages();
+
+    messages.forEach((message, index) => {
+      if (message.phone === phone) {
+        messages.splice(index, 1); // удаление данных из localStorage
+      }
+    })
+
+    localStorage.setItem('messages', JSON.stringify(messages)); // установка значения [] в localStorage
   }
 }
 
 
+/* валидация инпутов */
 const firstNameInput = document.querySelector('#firstName');
 let firstNameError = document.querySelector('.error-text');
 
 firstNameInput.addEventListener('input', () => {
   let firstName = firstNameInput.value.trim(); // обрезание символов пробела в начале/конце
 
-  // Удаляем все символы, кроме букв кириллицы и латиницы
-  firstName = firstName.replace(/[^a-zA-Zа-яА-Я]/g, '');
+  firstName = firstName.replace(/[^a-zA-Zа-яА-Я]/g, ''); // Удаляем все символы, кроме букв кириллицы и латиницы
 
   firstNameInput.value = firstName; // Присваиваем отфильтрованное значение обратно в поле ввода
 
@@ -231,12 +256,22 @@ document.querySelector('#form-modal').addEventListener('submit', event => {
     const message = new Message(firstName, lastName, email, phone);  // передаем данные в сущность Message
 
     UI.addMessageTolist(message); // рисуем данные
+
     Store.addMessage(message); // передаем данные в стор
 
     modal.close(); // закрываем модалку
   }
 });
 
+
+/* событие удаления записи */
+document.querySelector('#messages-list').addEventListener('click', e => {
+  UI.deleteMessage(e.target); // удаление записи из таблицы
+
+  Store.removeMessage(e.target.parentElement.previousElementSibling.textContent);
+
+  snackbar.show('Запись удалена!'); // уведомление об удалении записи
+})
 
 
 // показ данных из localStorage при загрузке страницы 
