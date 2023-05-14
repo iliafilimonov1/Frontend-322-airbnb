@@ -177,6 +177,45 @@ class Store {
 }
 
 
+const firstNameInput = document.querySelector('#firstName');
+let firstNameError = document.querySelector('.error-text');
+
+firstNameInput.addEventListener('input', () => {
+  let firstName = firstNameInput.value.trim(); // обрезание символов пробела в начале/конце
+
+  // Удаляем все символы, кроме букв кириллицы и латиницы
+  firstName = firstName.replace(/[^a-zA-Zа-яА-Я]/g, '');
+
+  firstNameInput.value = firstName; // Присваиваем отфильтрованное значение обратно в поле ввода
+
+  if (firstName === '') {
+    firstNameInput.classList.add('error');
+    firstNameError.textContent = 'Field Required';
+  } else {
+    firstNameInput.classList.remove('error');
+    firstNameError.textContent = '';
+  }
+});
+
+firstNameInput.addEventListener('blur', () => {
+  const firstName = firstNameInput.value.trim();
+
+  if (firstName === '') {
+    firstNameInput.classList.add('error');
+    firstNameError.textContent = 'Field Required';
+  }
+});
+
+firstNameInput.addEventListener('focus', () => {
+  const firstName = firstNameInput.value.trim();
+
+  if (firstName === '') {
+    firstNameInput.classList.add('error');
+    firstNameError.textContent = 'Field Required';
+  }
+});
+
+
 // обработка получения пользовательских данных
 document.querySelector('#form-modal').addEventListener('submit', event => {
   event.preventDefault(); // предотвращение отправки данных
@@ -189,13 +228,15 @@ document.querySelector('#form-modal').addEventListener('submit', event => {
   if (firstName === '' || lastName === '' || email === '' || phone === '') {
     alert('Please fill in all fields!');
   } else {
-    const message = new Message(firstName, lastName, email, phone); // передаем данные в сущность Message
+    const message = new Message(firstName, lastName, email, phone);  // передаем данные в сущность Message
 
-    UI.addMessageTolist(message); // рисуем данные в таблице
+    UI.addMessageTolist(message); // рисуем данные
+    Store.addMessage(message); // передаем данные в стор
 
-    Store.addMessage(message); // сохраняем данные в стор
+    modal.close(); // закрываем модалку
   }
-})
+});
+
 
 
 // показ данных из localStorage при загрузке страницы 
