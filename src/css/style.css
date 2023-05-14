@@ -44,7 +44,8 @@ a {
 svg {
   vertical-align: middle;
   position: relative;
-  z-index: 0; /* возможно, придется поднять из-за плашки при наведении */
+  z-index: 0;
+  /* возможно, придется поднять из-за плашки при наведении */
 }
 
 /* header */
@@ -681,36 +682,36 @@ footer {
 
 /* table */
 .table {
-	width: 100%;
-	border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
   margin-bottom: 48px;
 }
 
 .table thead {
-	background-color: #222222;
-	color: white;
-	border: 1px solid white;
+  background-color: #222222;
+  color: white;
+  border: 1px solid white;
 }
 
 .table th {
-	padding: 15px;
+  padding: 15px;
 }
 
 .table td {
-	padding: 10px;
+  padding: 10px;
 }
 
 .table tbody {
-	font-size: 18px;
-	border: 1px solid white;
+  font-size: 18px;
+  border: 1px solid white;
 }
 
 .table tbody tr:nth-child(2n) {
-	background-color: white;
+  background-color: white;
 }
 
 .table tbody tr:nth-child(2n + 1) {
-	background-color: #d3d3d3;
+  background-color: #d3d3d3;
 }
 
 
@@ -745,6 +746,8 @@ footer {
 .flex-column {
   display: flex;
   flex-direction: column;
+  align-self: baseline;
+  margin-bottom: 8px;
 }
 
 .flex-start {

@@ -178,10 +178,10 @@ class Store {
 
 
 const firstNameInput = document.querySelector('#firstName');
-let firstNameError = document.querySelector('#firstNameError');
+let firstNameError = document.querySelector('.error-text');
 
 firstNameInput.addEventListener('input', () => {
-  let firstName = firstNameInput.value.trim();
+  let firstName = firstNameInput.value.trim(); // обрезание символов пробела в начале/конце
 
   // Удаляем все символы, кроме букв кириллицы и латиницы
   firstName = firstName.replace(/[^a-zA-Zа-яА-Я]/g, '');
@@ -190,7 +190,7 @@ firstNameInput.addEventListener('input', () => {
 
   if (firstName === '') {
     firstNameInput.classList.add('error');
-    firstNameError.textContent = 'Please enter your first name.';
+    firstNameError.textContent = 'Field Required';
   } else {
     firstNameInput.classList.remove('error');
     firstNameError.textContent = '';
@@ -202,7 +202,7 @@ firstNameInput.addEventListener('blur', () => {
 
   if (firstName === '') {
     firstNameInput.classList.add('error');
-    firstNameError.textContent = 'Please enter your first name.';
+    firstNameError.textContent = 'Field Required';
   }
 });
 
@@ -211,7 +211,7 @@ firstNameInput.addEventListener('focus', () => {
 
   if (firstName === '') {
     firstNameInput.classList.add('error');
-    firstNameError.textContent = 'Please enter your first name.';
+    firstNameError.textContent = 'Field Required';
   }
 });
 
