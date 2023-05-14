@@ -21,7 +21,7 @@ input[type='text']::placeholder,
 input[type='email']::placeholder,
 input[type='password']::placeholder,
 input[type='tel']::placeholder,
-textarea {
+textarea::placeholder {
   font-size: 13px;
   color: #717171;
 }
